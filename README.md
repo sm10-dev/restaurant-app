@@ -6,6 +6,22 @@ We are proposing the development of a restaurant order-taking and management app
 
 Additional features will include an Analytics Dashboard for tracking popular dishes and their ratings from internet.
 
+## Setup Instructions
+
+### Frontend:
+1. Navigate to the frontend/ directory.
+2. Install dependencies using npm install.
+3. Run the frontend using npm start.
+
+### Backend:
+1. Navigate to the backend/ directory.
+2. Set up your MySQL database.
+3. Build and run the backend with Maven:
+   ```bash
+   mvn clean install
+   mvn spring-boot:run
+
+
 restaurant-app/
 ├── frontend/
 │   ├── src/
