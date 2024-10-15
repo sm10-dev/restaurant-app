@@ -3,7 +3,8 @@ CREATE TABLE menu (
   name VARCHAR(255) NOT NULL,
   price DECIMAL(5, 2) NOT NULL,
   description TEXT,
-  Stars INT,
+  Rating INT,
   Ingredients TEXT,
+  Category VARCHAR,
   Type VARCHAR(255)
 );
