@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background-color: #333;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav button:hover {
+    background-color: #777;
+}
+
+.view-container {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+/* Customer View Styles */
+.customer-view {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100vh;
+}
+
+.customer-view nav {
+    margin-bottom: 1rem;
+}
+
+.order-tracking, .feedback, .rating-form, .menu {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-tracking h2, .feedback h2, .rating-form h2, .menu h2 {
+    margin-top: 0;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #218838;
+}
+
+.success {
+    color: green;
+    margin-top: 1rem;
+}
+
+.error {
+    color: red;
+    margin-top: 1rem;
+}
+
+/* Header Styles */
+.header {
+    background-color: #ff6347; /* Tomato color */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+/* Navigation Styles */
+.navigation {
+    background-color: #333;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.navigation button {
+    background-color: #555;
+    color: white;
+    border: none;
+    margin: 0.2rem;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+    background-color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav button {
+        margin-bottom: 0.5rem;
+    }
+
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation button {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+}
