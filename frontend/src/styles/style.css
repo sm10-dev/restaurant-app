@@ -1,0 +1,40 @@
+/* frontend/src/styles/style.css */
+
+/* Feedback and Rating Styles */
+.feedback-rating {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .feedback-rating h2 {
+    text-align: center;
+  }
+  
+  .feedback-rating form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feedback-rating label {
+    margin-bottom: 15px;
+  }
+  
+  .feedback-rating select,
+  .feedback-rating textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+  }
+  
+  .feedback-rating button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .feedback-rating button:hover {
+    background-color: #0056b3;
+  }
+  
