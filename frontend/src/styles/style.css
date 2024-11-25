@@ -1,40 +1,186 @@
-/* frontend/src/styles/style.css */
+/* General Styles */
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #161718;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
 
-/* Feedback and Rating Styles */
-.feedback-rating {
-    max-width: 500px;
-    margin: 0 auto;
-  }
-  
-  .feedback-rating h2 {
-    text-align: center;
-  }
-  
-  .feedback-rating form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .feedback-rating label {
-    margin-bottom: 15px;
-  }
-  
-  .feedback-rating select,
-  .feedback-rating textarea {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-  }
-  
-  .feedback-rating button {
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .feedback-rating button:hover {
-    background-color: #0056b3;
-  }
-  
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.header {
+  background-color: #212529;
+  padding: 20px 0;
+}
+
+.logo img {
+  width: 150px;
+}
+
+.navbar {
+  display: flex;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-item .navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.btn-secondary {
+  background-color: #E4C590;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-icon {
+  position: relative;
+  margin-left: 10px;
+}
+
+.cartAmount {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #E4C590;
+  color: black;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 0.8rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #212529;
+  padding: 40px 0;
+}
+
+.footer .footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #333;
+  padding: 50px 0;
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  margin-top: 20px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  margin-top: 10px;
+}
+
+/* Menu Section */
+.menu-section {
+  padding: 50px 0;
+}
+
+.menu-item {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.menu-item img {
+  width: 150px;
+  margin-right: 20px;
+}
+
+.menu-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  background-color: #E4C590;
+  border: none;
+  cursor: pointer;
+}
+
+/* Feedback Section */
+.feedback-section {
+  padding: 50px 0;
+}
+
+.feedback-form .input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Cart Section */
+.cart-container {
+  padding: 50px 0;
+}
+
+.cart-item {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.cart-item-image {
+  width: 100px;
+  margin-right: 20px;
+}
+
+.cart-item-actions button {
+  padding: 5px 10px;
+  background-color: #E4C590;
+  border: none;
+  cursor: pointer;
+}
+
+/* Order Tracking Section */
+.order-tracking-section {
+  padding: 50px 0;
+}
+
+.order-tracking-form .input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Back to Top Button */
+.back-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #E4C590;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.back-top-btn ion-icon {
+  font-size: 24px;
+}
+
+/* Add more styles as needed */
