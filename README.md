@@ -530,3 +530,5 @@ Repository interfaces are a fundamental component of a Spring Boot application's
 By adhering to this structured and simplified approach, your `restaurant-app` project will remain manageable, scalable, and aligned with the objectives of a course project. This ensures that you can focus on delivering the required functionalities efficiently while maintaining clean and maintainable code.
 
 If you have any further questions or need additional clarifications on specific components or configurations, feel free to ask!
+
+change
