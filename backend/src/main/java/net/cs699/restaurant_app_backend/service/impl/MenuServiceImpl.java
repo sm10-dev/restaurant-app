@@ -10,7 +10,6 @@ import net.cs699.restaurant_app_backend.service.MenuService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -52,6 +51,9 @@ public class MenuServiceImpl implements MenuService {
         menu.setDescription(updatedMenuItem.getDescription() == null || updatedMenuItem.getDescription().trim().isEmpty() ? menu.getDescription() : updatedMenuItem.getDescription());
         menu.setCategory(updatedMenuItem.getCategory() == null || updatedMenuItem.getCategory().trim().isEmpty() ? menu.getCategory() : updatedMenuItem.getCategory());
         menu.setPrice(updatedMenuItem.getPrice() == 0 ? menu.getPrice() : updatedMenuItem.getPrice());
+        menu.setImageUrl(updatedMenuItem.getImageUrl() == null || updatedMenuItem.getImageUrl().trim().isEmpty() ? menu.getImageUrl() : updatedMenuItem.getImageUrl());
+        menu.setIsPopular(updatedMenuItem.getIsPopular() == null ? menu.getIsPopular() : updatedMenuItem.getIsPopular());
+        menu.setIsSpecial(updatedMenuItem.getIsSpecial() == null ? menu.getIsSpecial() : updatedMenuItem.getIsSpecial());
 
         Menu updateMenuItemObject = menuRepository.save(menu);
 
@@ -67,5 +69,19 @@ public class MenuServiceImpl implements MenuService {
         menuRepository.deleteById(menuItemId);
 
         return MenuMapper.mapToMenuDto(Menu);
+    }
+
+    @Override
+    public List<MenuDto> getAllPopularItems() {
+        List<Menu> menuItemList = menuRepository.findByIsPopularTrue();
+        return menuItemList.stream().map(MenuMapper::mapToMenuDto)
+                .collect(Collectors.toList());
+    }
+
+    @Override
+    public List<MenuDto> getAllSpecialItems() {
+        List<Menu> menuItemList = menuRepository.findByIsSpecialTrue();
+        return menuItemList.stream().map(MenuMapper::mapToMenuDto)
+                .collect(Collectors.toList());
     }
 }

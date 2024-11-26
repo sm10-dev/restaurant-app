@@ -13,4 +13,8 @@ public interface MenuService {
     MenuDto updateMenuItem(Long menuItemId, MenuDto updatedMenuItem);
 
     MenuDto deleteMenuItem(Long menuItemId);
+
+    List<MenuDto> getAllPopularItems();
+
+    List<MenuDto> getAllSpecialItems();
 }

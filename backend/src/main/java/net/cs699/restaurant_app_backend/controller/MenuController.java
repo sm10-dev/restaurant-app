@@ -46,4 +46,16 @@ public class MenuController {
         MenuDto menuDto = menuService.deleteMenuItem(menuItemId);
         return ResponseEntity.ok(menuDto);
     }
+
+    @GetMapping("/popular")
+    public ResponseEntity<List<MenuDto>> getAllPopularItems() {
+        List<MenuDto> menuItemDtoList = menuService.getAllPopularItems();
+        return ResponseEntity.ok(menuItemDtoList);
+    }
+
+    @GetMapping("/special")
+    public ResponseEntity<List<MenuDto>> getAllSpecialItems() {
+        List<MenuDto> menuItemDtoList = menuService.getAllSpecialItems();
+        return ResponseEntity.ok(menuItemDtoList);
+    }
 }

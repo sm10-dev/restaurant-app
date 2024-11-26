@@ -11,7 +11,10 @@ public class MenuMapper {
                 menu.getItemName(),
                 menu.getDescription(),
                 menu.getCategory(),
-                menu.getPrice()
+                menu.getPrice(),
+                menu.getImageUrl(),
+                menu.getIsPopular(),
+                menu.getIsSpecial()
         );
     }
 
@@ -21,7 +24,10 @@ public class MenuMapper {
                 menuDto.getItemName(),
                 menuDto.getDescription(),
                 menuDto.getCategory(),
-                menuDto.getPrice()
+                menuDto.getPrice(),
+                menuDto.getImageUrl(),
+                menuDto.getIsPopular(),
+                menuDto.getIsSpecial()
         );
     }
 }

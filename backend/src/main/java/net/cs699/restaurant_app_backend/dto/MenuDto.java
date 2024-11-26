@@ -23,9 +23,14 @@ public class MenuDto {
     @NotBlank(message = "Description cannot be blank")
     private String description;
 
-    @NotBlank(message = "Category cannot be blank")
     private String category;
 
     @Min(value = 0, message = "Price should be greater than 0")
     private double price;
+
+    private String imageUrl;
+
+    private Boolean isPopular = false;
+
+    private Boolean isSpecial = false;
 }

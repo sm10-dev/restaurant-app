@@ -21,7 +21,8 @@ public class Menu {
     @Column(name = "itemName")
     private String itemName;
 
-    @Column(name = "description")
+    @Lob
+    @Column(name = "description", length = 500)
     private String description;
 
     @Column(name = "category")
@@ -29,4 +30,13 @@ public class Menu {
 
     @Column(name = "price")
     private double price;
+
+    @Column(name = "image_url")
+    private String imageUrl;
+
+    @Column(name = "is_popular")
+    private Boolean isPopular = false;
+
+    @Column(name = "is_special")
+    private Boolean isSpecial = false;
 }
