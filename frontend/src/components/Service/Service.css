@@ -11,6 +11,12 @@
   overflow: hidden;
 }
 
+.service-card .img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .service-card .has-before {
   padding-block: 30px;
   margin-block-end: 26px;
@@ -69,4 +75,8 @@
 .btn-text:hover,
 .btn-text:focus-visible {
   color: var(--white);
+}
+
+.img-cover {
+  object-fit: cover;
 }

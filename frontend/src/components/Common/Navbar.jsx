@@ -1,3 +1,4 @@
+// src/components/Common/Navbar.jsx
 import React, { useState, useContext, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import './Navbar.css';
@@ -16,7 +17,6 @@ function Navbar() {
   };
 
   useEffect(() => {
-    // Close the navbar when the route changes
     setIsNavActive(false);
     document.body.classList.remove('nav-active');
   }, [location]);
@@ -64,7 +64,7 @@ function Navbar() {
       <div className="container header-container">
         {/* Logo */}
         <Link to="/" className="logo">
-          <img src="/assets/images/restlogo.svg" width="80" height="30" alt="Restaurant - Home" loading="lazy" />
+          <img src="/assets/images/restlogo.svg" width="20px" alt="Restaurant - Home" loading="lazy" />
         </Link>
 
         {/* Navigation Links */}
@@ -75,7 +75,7 @@ function Navbar() {
 
           {/* Navbar Logo (optional duplicate for side panel) */}
           <Link to="/" className="logo navbar-logo">
-            <img src="/assets/images/restlogo.svg" width="160" height="50" alt="Restaurant - Home" loading="lazy" />
+            <img src="/assets/images/restlogo.svg" width="100" alt="Restaurant - Home" loading="lazy" />
           </Link>
 
           {/* Navigation Links */}
@@ -132,8 +132,6 @@ function Navbar() {
             <a href="mailto:booking@restaurant.com" className="body-4 sidebar-link">
               booking@restaurant.com
             </a>
-
-            <div className="separator"></div>
 
             <p className="contact-label">Booking Request</p>
             <a href="tel:+91123123456" className="body-1 contact-number hover-underline">
