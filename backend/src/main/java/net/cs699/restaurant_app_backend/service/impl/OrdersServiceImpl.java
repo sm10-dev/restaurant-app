@@ -48,7 +48,7 @@ public class OrdersServiceImpl implements OrdersService {
         );
 
         order.setUserEmail(updatedOrder.getUserEmail() == null || updatedOrder.getUserEmail().trim().isEmpty() ? order.getUserEmail() : updatedOrder.getUserEmail());
-        order.setTotalAmount(updatedOrder.getTotalAmount() == 0 ? order.getTotalAmount() : updatedOrder.getTotalAmount());
+        order.setTotalAmount(updatedOrder.getTotalAmount() == null || updatedOrder.getTotalAmount() == 0 ? order.getTotalAmount() : updatedOrder.getTotalAmount());
         order.setStatus(updatedOrder.getStatus() == null || updatedOrder.getStatus().trim().isEmpty() ? order.getStatus() : updatedOrder.getStatus());
 
         Orders updateOrdersItemObject = ordersRepository.save(order);
