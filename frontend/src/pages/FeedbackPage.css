@@ -1,0 +1,55 @@
+/* src/pages/FeedbackPage.css */
+
+.feedback-page .section-title {
+    margin-bottom: 40px;
+  }
+  
+  .order-search {
+    text-align: center;
+  }
+  
+  .order-search .input-field {
+    max-width: 300px;
+    margin: 10px auto;
+  }
+  
+  .feedback-form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .feedback-items {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .feedback-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .feedback-item .item-name {
+    font-size: var(--fontSize-body-1);
+  }
+  
+  .rating {
+    display: flex;
+  }
+  
+  .star {
+    font-size: 2rem;
+    color: var(--quick-silver);
+    cursor: pointer;
+  }
+  
+  .star.selected {
+    color: var(--gold-crayola);
+  }
+  
+  .star:hover,
+  .star:hover ~ .star {
+    color: var(--gold-crayola);
+  }
+  

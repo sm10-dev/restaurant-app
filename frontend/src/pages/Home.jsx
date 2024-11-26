@@ -2,8 +2,10 @@ import React from 'react';
 import Hero from '../components/Hero/Hero';
 import Service from '../components/Service/Service';
 import SpecialDish from '../components/SpecialDish/SpecialDish';
-import PopularDishes from '../components/PopularDishes/PopularDishes';
-import BackToTop from '../components/Common/BackToTop';
+import MenuHighlight from '../components/Menu/Menu';
+import Testimonials from '../components/Testimonials/Testimonials';
+import Features from '../components/Features/Features';
+import './Home.css';
 
 function Home() {
   return (
@@ -11,8 +13,9 @@ function Home() {
       <Hero />
       <Service />
       <SpecialDish />
-      <PopularDishes />
-      <BackToTop />
+      <MenuHighlight />
+      <Testimonials />
+      <Features />
     </main>
   );
 }

@@ -1,0 +1,45 @@
+.orders-page .section-title {
+  margin-bottom: 40px;
+}
+
+.orders-empty {
+  color: var(--quick-silver);
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-item {
+  background-color: var(--smoky-black-2);
+  padding: 20px;
+  border-radius: var(--radius-24);
+}
+
+.order-id {
+  font-size: var(--fontSize-title-2);
+  color: var(--gold-crayola);
+  margin-bottom: 10px;
+}
+
+.order-date {
+  color: var(--quick-silver);
+  margin-bottom: 10px;
+}
+
+.order-items {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.order-items li {
+  color: var(--white);
+  margin-bottom: 5px;
+}
+
+.order-total {
+  font-size: var(--fontSize-body-1);
+  color: var(--gold-crayola);
+}

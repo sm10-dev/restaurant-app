@@ -1,0 +1,47 @@
+/* Topbar Styles */
+.topbar {
+  display: none;
+}
+
+@media (min-width: 575px) {
+  .topbar {
+    display: block;
+    background-color: var(--eerie-black-2);
+    padding-block: 10px;
+    border-bottom: 1px solid var(--white-alpha-20);
+  }
+
+  .topbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .topbar-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: var(--fontSize-label-1);
+  }
+
+  .topbar .icon {
+    font-size: 1.4rem;
+    color: var(--gold-crayola);
+  }
+
+  .topbar .separator {
+    width: 1px;
+    height: 20px;
+    background-color: var(--white-alpha-20);
+  }
+
+  .topbar .link {
+    color: var(--white);
+    transition: color var(--transition-1);
+  }
+
+  .topbar .link:hover {
+    color: var(--gold-crayola);
+  }
+}

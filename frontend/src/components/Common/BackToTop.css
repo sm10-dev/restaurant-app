@@ -1,0 +1,29 @@
+.back-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1000;
+}
+
+.back-top-btn {
+  background-color: var(--gold-crayola);
+  color: var(--black);
+  padding: 15px;
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+  transition: opacity 0.3s ease-out;
+  opacity: 1;
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-top-btn ion-icon {
+  font-size: 24px;
+}
+
+.back-top-btn:hover,
+.back-top-btn:focus-visible {
+  opacity: 0.8;
+}
