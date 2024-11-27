@@ -1,3 +1,5 @@
+// src/components/Common/BackToTop.jsx
+
 import React, { useEffect, useState } from 'react';
 import './BackToTop.css';
 
@@ -27,7 +29,7 @@ function BackToTop() {
   return (
     <div className="back-to-top">
       {isVisible && (
-        <button onClick={scrollToTop} className="back-top-btn" aria-label="back to top">
+        <button onClick={scrollToTop} className="back-top-btn" aria-label="Back to top">
           <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
         </button>
       )}

@@ -19,10 +19,12 @@ import MenuPage from './pages/MenuPage';
 import CartPage from './pages/CartPage';
 import OrdersPage from './pages/OrdersPage';
 import FeedbackPage from './pages/FeedbackPage';
+import ScrollToTop from './components/Common/ScrollToTop'; // Import the component
 
 function App() {
   return (
     <Router>
+      <ScrollToTop /> {/* Place it inside Router */}
       <div className="App">
         <Preloader />
         <Topbar />

@@ -30,7 +30,7 @@ function Navbar() {
             <div className="icon">
               <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
             </div>
-            <span className="span">Opposite IIIT Pune, Ambegaon, Pune</span>
+            <span className="span">Opposite IIT Bombay, Powai, Mumbai</span>
           </address>
 
           <div className="separator"></div>
@@ -123,8 +123,8 @@ function Navbar() {
             <p className="headline-1 navbar-title">Visit Us</p>
 
             <address className="body-4">
-              Opposite IIIT Pune, <br />
-              Ambegaon BK, Pune
+            Opposite IIT Bombay,  <br />
+              Powai, Mumbai
             </address>
 
             <p className="body-4 navbar-text">Open: 9.30 am - 2.30pm</p>

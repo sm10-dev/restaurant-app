@@ -1,63 +1,107 @@
+// src/components/Menu/Menu.jsx
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css';
-import { fetchMenuItems } from '../../services/menuService';
+import { fetchMenuItems } from '../../services/menuService'; // Ensure this service is correctly implemented
 
 function Menu() {
   const [menuItems, setMenuItems] = useState([]);
+  const [loading, setLoading] = useState(true); // Loading state
+  const [error, setError] = useState(null);     // Error state
 
   useEffect(() => {
     const getMenuItems = async () => {
-      const items = await fetchMenuItems();
-      setMenuItems(items);
+      try {
+        const items = await fetchMenuItems();
+        // Limit to first 6 items
+        setMenuItems(items.slice(0, 6));
+      } catch (err) {
+        setError('Failed to fetch menu items.');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
     };
     getMenuItems();
   }, []);
+
+  if (loading) {
+    return (
+      <section className="section menu" aria-label="menu-label" id="menu">
+        <div className="container">
+          <p className="menu-subtitle text-center label-2">Loading...</p>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="section menu" aria-label="menu-label" id="menu">
+        <div className="container">
+          <p className="menu-subtitle text-center label-2">{error}</p>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="section menu" aria-label="menu-label" id="menu">
       <div className="container">
 
-        <p className="section-subtitle text-center label-2">Special Selection</p>
+        <p className="menu-subtitle text-center label-2">Special Selection</p>
 
-        <h2 className="headline-1 section-title text-center">Menu Highlight</h2>
+        <h2 className="headline-1 menu-section-title text-center">Menu Highlight</h2>
 
-        <ul className="grid-list">
-
+        <ul className="menu-grid-list">
           {menuItems.map((item) => (
-            <li key={item.id}>
-              <div className="menu-card hover:card">
-                <figure className="card-banner img-holder" style={{ '--width': '100', '--height': '100' }}>
-                  <img src={item.imageUrl} width="100" height="100" loading="lazy" alt={item.name} className="img-cover" />
+            <li key={item.id} className="menu-grid-item">
+              <div className="menu-highlight-card">
+                <figure className="menu-highlight-banner">
+                  <img
+                    src={item.imageUrl}
+                    alt={item.name}
+                    className="menu-highlight-img"
+                    loading="lazy"
+                  />
                 </figure>
-                <div>
-                  <div className="title-wrapper">
-                    <h3 className="title-3">
-                      <Link to="/menu" className="card-title">{item.name}</Link>
+                <div className="menu-highlight-content">
+                  <div className="menu-highlight-title-wrapper">
+                    <h3 className="menu-highlight-title">
+                      <Link to={item.link} className="menu-highlight-title-link">
+                        {item.name}
+                      </Link>
                     </h3>
-                    <span className="span title-2">Rs.{item.price}</span>
+                    <span className="menu-highlight-price">Rs.{item.price}</span>
                   </div>
-                  <p className="card-text label-1">
+                  {item.badge && <span className="menu-highlight-badge">{item.badge}</span>}
+                  <p className="menu-highlight-description">
                     {item.description}
                   </p>
+                  <div className="menu-highlight-actions">
+                    {/* Add your Add to Cart functionality here if needed */}
+                    <Link to="/menu" className="menu-highlight-view-details-btn">
+                      View Menu
+                    </Link>
+                  </div>
                 </div>
               </div>
             </li>
           ))}
-
         </ul>
 
         <p className="menu-text text-center">
-          During winter daily from <span className="span">8:00 am</span> to <span className="span">9:00 pm</span>
+          During winter daily from <span>8:00 am</span> to <span>9:00 pm</span>
         </p>
 
-        <Link to="/menu" className="btn btn-primary">
+        <Link to="/menu" className="menu-primary-button">
           <span className="text text-1">View All Menu</span>
           <span className="text text-2" aria-hidden="true">View All Menu</span>
         </Link>
 
-        <img src="/assets/images/shape-5.png" alt="shape" className="shape shape-2 move-anim" />
-        <img src="/assets/images/shape-6.png" alt="shape" className="shape shape-3 move-anim" />
+        <img src="/assets/images/shape-5.png" alt="Decorative Shape" className="menu-shape shape-2 move-anim" />
+        <img src="/assets/images/shape-6.png" alt="Decorative Shape" className="menu-shape shape-3 move-anim" />
 
       </div>
     </section>

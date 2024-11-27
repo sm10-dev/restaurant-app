@@ -1,3 +1,5 @@
+// src/pages/MenuPage.jsx
+
 import React, { useEffect, useState, useContext } from 'react';
 import './MenuPage.css';
 import { fetchMenuItems } from '../services/menuService';
@@ -56,9 +58,9 @@ function MenuPage() {
                           </button>
                         ) : (
                           <div className="quantity-controls">
-                            <button onClick={() => handleDecrement(item)}>-</button>
+                            <button onClick={() => handleDecrement(item)} aria-label={`Decrease quantity of ${item.name}`}>-</button>
                             <span>{getItemQuantity(item.id)}</span>
-                            <button onClick={() => handleAddToCart(item)}>+</button>
+                            <button onClick={() => handleAddToCart(item)} aria-label={`Increase quantity of ${item.name}`}>+</button>
                           </div>
                         )}
                       </div>

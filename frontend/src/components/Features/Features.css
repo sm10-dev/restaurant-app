@@ -1,37 +1,153 @@
-.features .section-title {
-  margin-block-end: 40px;
+/* src/components/Features/Features.css */
+
+/* General Section Styles */
+.features-section {
+  padding: 4rem 0; /* 40px top and bottom */
+  position: relative;
+  overflow: hidden;
+  background-color: var(--eerie-black-4); /* Optional: Background for the section */
 }
 
-.feature-card {
+.features-title {
+  margin-block-end: 40px;
+  text-align: center;
+  color: var(--white);
+}
+
+/* Subtitle Styling */
+.features-subtitle {
+  color: var(--gold-crayola);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* Grid Layout for Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px; /* 20px gap between grid items */
+  margin-bottom: 3.125rem; /* 50px */
+  padding: 0;
+  list-style: none;
+}
+
+/* Individual Feature Item */
+.features-item {
+  /* No additional styles needed; grid handles layout */
+}
+
+/* Feature Card Styling */
+.features-card {
   padding: 30px 20px 40px;
   background-color: var(--smoky-black-3);
   border-radius: var(--radius-24);
-  transition: transform var(--transition-2);
+  transition: transform var(--transition-2), background-color var(--transition-2);
+  height: 100%; /* Ensures all cards have equal height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.feature-item:nth-child(odd) .feature-card {
+.features-item:nth-child(odd) .features-card {
   background-color: var(--eerie-black-3);
 }
 
-.feature-item:nth-child(even) .feature-card {
+.features-item:nth-child(even) .features-card {
   background-color: var(--smoky-black-3);
 }
 
-.feature-card .card-icon {
-  max-width: max-content;
-  margin-inline: auto;
-  transition: var(--transition-2);
+.features-card:hover {
+  transform: translateY(-5px);
+  background-color: var(--gold-crayola); /* Change background on hover */
 }
 
-.feature-card:hover .card-icon {
+.features-card-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  transition: transform var(--transition-2);
+}
+
+.features-card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.features-card:hover .features-card-icon {
   transform: scale(1.05);
 }
 
-.feature-card .card-title {
+.features-card-title {
   margin-block: 20px;
+  font-size: 1.5rem;
+  color: var(--white);
 }
 
-.feature-card .card-text {
+.features-card-description {
   color: var(--quick-silver);
-  line-height: var(--lineHeight-6);
+  line-height: 1.6;
+  font-size: 1rem;
+  flex-grow: 1; /* Pushes the content to take up available space */
+}
+
+/* Decorative Shapes */
+.features-shape {
+  position: absolute;
+  max-width: 150px;
+  z-index: -1;
+}
+
+.shape-1 {
+  top: 10%;
+  left: 5%;
+}
+
+.shape-2 {
+  bottom: 10%;
+  right: 5%;
+}
+
+/* Hover Effects for Shapes (Optional) */
+.features-shape.move-anim {
+  animation: move 5s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr; /* 1 column for small screens */
+  }
+
+  .features-card {
+    padding: 20px 15px 30px;
+  }
+
+  .features-card-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+
+  .features-card-title {
+    font-size: 1.3rem;
+  }
+
+  .features-card-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* Keyframes for Shape Animation */
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
 }

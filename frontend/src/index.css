@@ -66,6 +66,7 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Adjusted Body Styles */
 body {
   background-color: var(--eerie-black-1);
   color: var(--white);
@@ -73,8 +74,8 @@ body {
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
-  overflow: hidden;
-  height: 300vh;
+  overflow: auto; /* Changed from hidden to auto */
+  height: auto; /* Changed from 300vh to auto */
   transition: var(--transition-2);
 }
 
@@ -172,6 +173,8 @@ body.nav-active {
 /* REUSED STYLES */
 .container {
   padding-inline: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .separator {
@@ -222,6 +225,7 @@ body.nav-active {
   text-align: center;
 }
 
+/* Avoid conflicting class names by ensuring component-specific classes are unique */
 .img-cover {
   width: 100%;
   height: 100%;
@@ -245,6 +249,7 @@ body.nav-active {
   margin-block-start: 5px;
 }
 
+/* Primary Button Styles */
 .btn {
   position: relative;
   color: var(--gold-crayola);
@@ -270,6 +275,7 @@ body.nav-active {
   border-radius: var(--radius-circle);
   background-color: var(--gold-crayola);
   transition: var(--transition-2);
+  transition-delay: 0;
   z-index: -1;
 }
 
@@ -299,6 +305,7 @@ body.nav-active {
   transform: translate(-50%, -50%);
 }
 
+/* Secondary Button Styles (Global) */
 .btn-secondary {
   background-color: var(--gold-crayola);
   color: var(--black);
@@ -312,6 +319,7 @@ body.nav-active {
   color: var(--white);
 }
 
+/* Additional Styles */
 .has-before,
 .has-after {
   position: relative;
@@ -361,7 +369,7 @@ body.nav-active {
 }
 
 .img-holder {
-  aspect-ratio: var(--width) / var(--height);
+  aspect-ratio: 16 / 9; /* Ensure consistent aspect ratio */
   overflow: hidden;
   background-color: var(--eerie-black-4);
 }
@@ -400,7 +408,6 @@ body.nav-active {
   100% {
     transform: translateY(0);
   }
-
   50% {
     transform: translateY(30px);
   }
@@ -412,6 +419,7 @@ body.nav-active {
   background-position: center;
 }
 
+/* Input Field Styles */
 .input-field {
   background-color: var(--smoky-black-2);
   color: var(--white);
@@ -431,6 +439,7 @@ body.nav-active {
   border-color: var(--gold-crayola);
 }
 
+/* Icon Wrapper */
 .icon-wrapper {
   position: relative;
   margin-block-end: 20px;

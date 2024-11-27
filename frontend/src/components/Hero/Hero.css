@@ -1,6 +1,8 @@
+/* src/components/Hero/Hero.css */
+
 .hero {
   position: relative;
-  padding-block: 120px;
+  padding: 120px 0; /* 120px top and bottom */
   min-height: 100vh;
   overflow: hidden;
   z-index: 1;
@@ -21,10 +23,10 @@
   height: 100%;
   display: grid;
   place-content: center;
-  padding-block-start: 100px;
+  padding-top: 100px;
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition-3);
+  transition: opacity var(--transition-3);
   z-index: 1;
 }
 
@@ -58,7 +60,7 @@
   }
 }
 
-.slider-item .section-subtitle::after {
+.section-subtitle::after {
   margin-block: 14px 20px;
 }
 
@@ -67,11 +69,11 @@
 }
 
 .hero-text {
-  margin-block: 10px 40px;
+  margin: 10px 0 40px;
 }
 
 .hero .btn {
-  margin-inline: auto;
+  margin: 0 auto;
 }
 
 .slider-btn {

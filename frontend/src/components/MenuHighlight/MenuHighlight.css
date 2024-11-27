@@ -1,87 +1,307 @@
-/* MenuHighlight.css */
-.menu .section-title {
-    margin-block-end: 40px;
+/* src/components/Menu/MenuHighlight.css */
+
+.menu-highlight {
+  padding: 4rem 0; /* 40px top and bottom */
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-highlight .section-title {
+  margin-bottom: 2.5rem; /* 40px */
+  text-align: center;
+}
+
+/* Grid Layout with Fixed Row Heights */
+.menu-highlight .menu-highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-auto-rows: 1fr; /* Ensure all grid items have equal height */
+  gap: 2rem; /* 20px */
+  margin-bottom: 3.125rem; /* 50px */
+}
+
+.menu-highlight .menu-highlight-item {
+  display: flex;
+}
+
+.menu-highlight .menu-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--smoky-black-2);
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  height: 100%; /* Card fills the height of its grid cell */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-highlight .menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container with Fixed Height */
+.menu-highlight .card-banner {
+  width: 100%;
+  height: 180px; /* Fixed height for images */
+  position: relative;
+  overflow: hidden;
+  background-color: var(--eerie-black-4);
+}
+
+.menu-highlight .menu-img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container without distortion */
+  transition: transform 0.3s ease;
+}
+
+.menu-highlight .menu-card:hover .menu-img-cover {
+  transform: scale(1.05);
+}
+
+/* Card Content */
+.menu-highlight .card-content {
+  padding: 1.5rem; /* 24px */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Allow card-content to grow */
+}
+
+.menu-highlight .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem; /* 16px */
+}
+
+.menu-highlight .card-title {
+  color: var(--white);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.menu-highlight .card-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-highlight .card-title-link:hover,
+.menu-highlight .card-title-link:focus {
+  color: var(--gold-crayola);
+}
+
+.menu-highlight .card-price {
+  color: var(--gold-crayola);
+  font-size: 1rem;
+}
+
+.menu-highlight .badge {
+  background-color: var(--gold-crayola);
+  color: var(--eerie-black-1);
+  font-family: var(--fontFamily-forum);
+  max-width: max-content;
+  line-height: 1.5;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  margin-top: 0.625rem; /* 10px */
+  border-radius: var(--radius-12);
+  align-self: flex-start;
+}
+
+.menu-highlight .card-text {
+  color: var(--quick-silver);
+  line-height: 1.4;
+  margin-top: 1rem; /* 16px */
+  flex-grow: 1; /* Allow card-text to grow and fill space */
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-highlight .cart-actions {
+  margin-top: 1rem; /* 16px */
+}
+
+/* Secondary Button */
+.menu-highlight .menu-btn-secondary {
+  width: 100%;
+  padding: 0.8rem 1.2rem; /* 12px 19px */
+  background-color: var(--gold-crayola);
+  color: var(--black);
+  border: none;
+  border-radius: var(--radius-12);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-highlight .menu-btn-secondary:hover,
+.menu-highlight .menu-btn-secondary:focus-visible {
+  background-color: var(--white);
+  color: var(--gold-crayola);
+}
+
+/* Quantity Controls */
+.menu-highlight .quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* 8px */
+}
+
+.menu-highlight .quantity-controls button {
+  background-color: var(--gold-crayola);
+  color: var(--black);
+  border: none;
+  padding: 0.5rem 1rem; /* 8px 16px */
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.menu-highlight .quantity-controls button:hover,
+.menu-highlight .quantity-controls button:focus-visible {
+  background-color: var(--white);
+  color: var(--gold-crayola);
+}
+
+.menu-highlight .quantity-controls span {
+  font-size: 1.2rem; /* 19px */
+  color: var(--white);
+}
+
+/* Menu Text */
+.menu-highlight .menu-text {
+  margin-bottom: 2.6rem; /* ~26px */
+  text-align: center;
+}
+
+.menu-highlight .menu-text span {
+  color: var(--gold-crayola);
+}
+
+/* Primary Button */
+.menu-highlight .menu-btn-primary {
+  display: inline-block;
+  position: relative;
+  color: var(--gold-crayola);
+  font-size: var(--fontSize-label-2);
+  font-weight: var(--weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letterSpacing-5);
+  border: 2px solid var(--gold-crayola);
+  padding: 1.2rem 4.5rem; /* 12px 45px */
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  transition: color 0.3s ease;
+  text-align: center;
+}
+
+.menu-highlight .menu-btn-primary .text-1 {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.menu-highlight .menu-btn-primary .text-2 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--smoky-black-1);
+  transition: transform 0.3s ease;
+}
+
+.menu-highlight .menu-btn-primary:hover,
+.menu-highlight .menu-btn-primary:focus-visible {
+  color: var(--black);
+}
+
+.menu-highlight .menu-btn-primary:hover .text-1,
+.menu-highlight .menu-btn-primary:focus-visible .text-1 {
+  transform: translateY(-100%);
+}
+
+.menu-highlight .menu-btn-primary:hover .text-2,
+.menu-highlight .menu-btn-primary:focus-visible .text-2 {
+  transform: translate(-50%, -50%);
+}
+
+.menu-highlight .menu-btn-primary::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%;
+  height: 200%;
+  background-color: var(--gold-crayola);
+  border-radius: var(--radius-circle);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.menu-highlight .menu-btn-primary:hover::before,
+.menu-highlight .menu-btn-primary:focus-visible::before {
+  transform: translateY(-100%);
+}
+
+/* Decorative Shapes */
+.menu-highlight .shape {
+  display: none; /* Keep as per original */
+  position: absolute;
+  max-width: max-content;
+  z-index: -1;
+}
+
+.menu-highlight .shape-2 {
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.menu-highlight .shape-3 {
+  bottom: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+}
+
+.menu-highlight .move-anim {
+  animation: move 5s linear infinite;
+}
+
+/* Responsive Layout */
+.menu-highlight .menu-highlight-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .menu-highlight .menu-highlight-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .menu .grid-list {
-    margin-block-end: 50px;
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .menu-highlight .menu-highlight-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .menu-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
+}
+
+@media (min-width: 1024px) {
+  .menu-highlight .menu-highlight-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
-  
-  .hover\:card .card-banner {
-    background-color: var(--gold-crayola);
+}
+
+/* Keyframes */
+@keyframes move {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  
-  .hover\:card .card-banner .img-cover {
-    transition: var(--transition-2);
+
+  50% {
+    transform: translateY(30px);
   }
-  
-  .hover\:card:is(:hover, :focus-within) .card-banner .img-cover {
-    opacity: 0.7;
-    transform: scale(1.05);
-  }
-  
-  .menu-card .card-banner {
-    flex-shrink: 0;
-    border-radius: var(--radius-24);
-  }
-  
-  .menu-card .card-title {
-    transition: var(--transition-1);
-  }
-  
-  .menu-card .card-title:is(:hover, :focus-visible) {
-    color: var(--gold-crayola);
-  }
-  
-  .menu-card .badge {
-    background-color: var(--gold-crayola);
-    color: var(--eerie-black-1);
-    font-family: var(--fontFamily-forum);
-    max-width: max-content;
-    line-height: var(--lineHeight-6);
-    text-transform: uppercase;
-    padding-inline: 10px;
-    margin-block-start: 10px;
-  }
-  
-  .menu-card .span {
-    color: var(--gold-crayola);
-    margin-block: 10px;
-  }
-  
-  .menu-card .card-text {
-    color: var(--quick-silver);
-    line-height: var(--lineHeight-4);
-  }
-  
-  .menu-text .span {
-    display: inline-block;
-    color: var(--gold-crayola);
-  }
-  
-  .menu .btn {
-    margin-inline: auto;
-    margin-block-start: 26px;
-  }
-  
-  .menu .shape {
-    display: block;
-    width: 70%;
-  }
-  
-  .menu .shape-2 {
-    top: 0;
-    left: 0;
-  }
-  
-  .menu .shape-3 {
-    bottom: 0;
-    right: 0;
-  }
-  
+}

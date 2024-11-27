@@ -1,10 +1,10 @@
+/* src/styles/style.css */
+
 /* Root Variables */
 :root {
-
   /**
    * COLORS
    */
-
   --gold-crayola: hsl(38, 61%, 73%);
   --quick-silver: hsla(0, 0%, 65%, 1);
   --davys-grey: hsla(30, 3%, 34%, 1);
@@ -26,14 +26,12 @@
   /**
    * GRADIENT COLOR
    */
-
   --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%, transparent 66.66% 75%);
   --gradient-1: linear-gradient(to top, hsla(0, 0%, 0%, 0.9), hsla(0, 0%, 0%, 0.7), transparent);
 
   /**
    * TYPOGRAPHY
    */
-
   /* font-family */
   --fontFamily-forum: 'Forum', cursive;
   --fontFamily-dm_sans: 'DM Sans', sans-serif;
@@ -75,26 +73,23 @@
   /**
    * SPACING
    */
-
   --section-space: 70px;
 
   /**
    * SHADOW
    */
-
   --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
 
   /**
    * BORDER RADIUS
    */
-
   --radius-24: 24px;
+  --radius-12: 12px;
   --radius-circle: 50%;
 
   /**
    * TRANSITION
    */
-
   --transition-1: 250ms ease;
   --transition-2: 500ms ease;
   --transition-3: 1000ms ease;
@@ -173,8 +168,9 @@ body {
   font-size: var(--fontSize-body-4);
   font-weight: var(--weight-regular);
   line-height: var(--lineHeight-5);
-  overflow: hidden;
-  height: 300vh;
+  overflow: auto; /* Changed from hidden to auto */
+  height: auto; /* Changed from 300vh to auto */
+  transition: var(--transition-2);
 }
 
 body.loaded {
@@ -185,6 +181,7 @@ body.nav-active {
   overflow: hidden;
 }
 
+/* Scrollbar Styles */
 ::-webkit-scrollbar {
   width: 5px;
 }
@@ -351,6 +348,7 @@ body.nav-active {
   margin-block-start: 5px;
 }
 
+/* Primary Button Styles */
 .btn {
   position: relative;
   color: var(--gold-crayola);
@@ -406,6 +404,7 @@ body.nav-active {
   transform: translate(-50%, -50%);
 }
 
+/* Secondary Button Styles (Global) */
 .btn-secondary {
   background-color: var(--gold-crayola);
   color: var(--black);
@@ -419,6 +418,7 @@ body.nav-active {
   color: var(--white);
 }
 
+/* Additional Styles */
 .has-before,
 .has-after {
   position: relative;
@@ -462,13 +462,13 @@ body.nav-active {
   transform: skewX(-0.08turn) translateX(-180%);
 }
 
-.hover\:shine:is(:hover, :focus-visible)::after {
+.hover\:shine:is(:hover, :focus-within)::after {
   transform: skewX(-0.08turn) translateX(275%);
   transition: var(--transition-3);
 }
 
 .img-holder {
-  aspect-ratio: var(--width) / var(--height);
+  aspect-ratio: 16 / 9; /* Ensure consistent aspect ratio */
   overflow: hidden;
   background-color: var(--eerie-black-4);
 }
@@ -518,6 +518,7 @@ body.nav-active {
   background-position: center;
 }
 
+/* Input Field Styles */
 .input-field {
   background-color: var(--smoky-black-2);
   color: var(--white);
@@ -537,6 +538,7 @@ body.nav-active {
   border-color: var(--gold-crayola);
 }
 
+/* Icon Wrapper */
 .icon-wrapper {
   position: relative;
   margin-block-end: 20px;

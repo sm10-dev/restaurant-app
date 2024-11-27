@@ -1,3 +1,5 @@
+// src/components/Common/Footer.jsx
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
@@ -14,7 +16,7 @@ const Footer = () => {
             <Link to="/" className="logo">
               <img src="/assets/images/restlogo.svg" alt="Restaurant Home" loading="lazy" />
             </Link>
-            <address className="body-4">Opposite IIIT Pune, Ambegaon BK, Pune</address>
+            <address className="body-4">Opposite IIT Bombay, Powai, Mumbai</address>
             <a href="mailto:booking@restaurant.com" className="body-4 contact-link">booking@restaurant.com</a>
             <a href="tel:+91 1234567890" className="body-4 contact-link">Booking Request : +91-1234567890</a>
             <p className="body-4">Open : 09:00 am - 10:00 pm</p>
@@ -73,7 +75,7 @@ const Footer = () => {
         <div className="footer-bottom">
           <p className="copyright">
             &copy; 2023 Restaurant. All Rights Reserved | Crafted by{' '}
-            <a href="https://github.com/pawan0777" target="_blank" rel="noopener noreferrer" className="link">pawan0777</a>
+            <a href="https://github.com/sm10-dev/restaurant-app" target="_blank" rel="noopener noreferrer" className="link">3_Rookies</a>
           </p>
         </div>
       </div>
