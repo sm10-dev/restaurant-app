@@ -13,7 +13,7 @@ const Preloader = () => {
   return (
     <div className="preload" data-preaload>
       <div className="circle"></div>
-      <p className="text">TicoQr</p>
+      <p className="text">3 ROOKIES</p>
     </div>
   );
 };
