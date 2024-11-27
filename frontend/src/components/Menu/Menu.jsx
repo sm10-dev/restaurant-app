@@ -32,7 +32,7 @@ function Menu() {
     return (
       <section className="section menu" aria-label="menu-label" id="menu">
         <div className="container">
-          <p className="menu-subtitle text-center label-2">Loading...</p>
+          <p className="menu-subtitle text-center label-2"></p>
         </div>
       </section>
     );

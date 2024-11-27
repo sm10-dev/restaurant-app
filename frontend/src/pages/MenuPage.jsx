@@ -47,9 +47,9 @@ function MenuPage() {
               {menuItems.filter(item => item.category === category).map((item) => (
                 <li key={item.id} className="menu-page-item">
                   <div className="menu-page-card">
-                    <img src={item.imageUrl} alt={item.name} className="menu-page-img" loading="lazy" />
+                    <img src={item.imageUrl} alt={item.itemName} className="menu-page-img" loading="lazy" />
                     <div className="menu-page-details">
-                      <h3 className="menu-page-title">{item.name}</h3>
+                      <h3 className="menu-page-title">{item.itemName}</h3>
                       <p className="menu-page-description">{item.description}</p>
                       <div className="menu-page-footer">
                         <span className="menu-page-price">Rs. {item.price}</span>
