@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Menu.css';
 import { fetchMenuItems } from '../../services/menuService'; // Ensure this service is correctly implemented
+import axios from 'axios';
 
 function Menu() {
   const [menuItems, setMenuItems] = useState([]);
@@ -11,19 +12,20 @@ function Menu() {
   const [error, setError] = useState(null);     // Error state
 
   useEffect(() => {
-    const getMenuItems = async () => {
+    const getMenuItems = () => {
+      
       try {
-        const items = await fetchMenuItems();
-        // Limit to first 6 items
-        setMenuItems(items.slice(0, 6));
-      } catch (err) {
+        axios
+      .get('http://localhost:8080/api/menu')
+      .then((response) => {
+        setMenuItems(response.data.slice(0, 6))
+      });} catch (err) {
         setError('Failed to fetch menu items.');
         console.error(err);
       } finally {
         setLoading(false);
       }
     };
-    getMenuItems();
   }, []);
 
   if (loading) {

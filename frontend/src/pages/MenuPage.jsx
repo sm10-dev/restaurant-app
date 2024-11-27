@@ -4,17 +4,18 @@ import React, { useEffect, useState, useContext } from 'react';
 import './MenuPage.css';
 import { fetchMenuItems } from '../services/menuService';
 import { CartContext } from '../context/CartContext';
+import axios from 'axios';
 
 function MenuPage() {
   const [menuItems, setMenuItems] = useState([]);
   const { basket, increment, decrement } = useContext(CartContext);
 
   useEffect(() => {
-    const getMenuItems = async () => {
-      const items = await fetchMenuItems();
-      setMenuItems(items);
-    };
-    getMenuItems();
+    axios
+      .get('http://localhost:8080/api/menu')
+      .then((response) => {
+        setMenuItems(response.data)
+      });
   }, []);
 
   const handleAddToCart = (item) => {
